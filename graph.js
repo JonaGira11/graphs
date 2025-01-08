@@ -31,6 +31,16 @@ class Graph{
 }
 
 let g = new Graph();
-g.addVertex("Dallas");
-g.addVertex("Tokyo");
-g.addVertex("Aspen");
+g.addVertex("A");
+g.addVertex("B");
+g.addVertex("C");
+g.addVertex("D");
+g.addVertex("E");
+g.addVertex("F");
+
+g.addEdge("A","B")
+g.addEdge("A","C")
+g.addEdge("B","E")
+g.addEdge("D","E")
+g.addEdge("D","F")
+g.addEdge("E","F")
