@@ -56,11 +56,19 @@ g.addEdge("E","F")
 function DFSRecursive(start){
     const list = []
     const visited = {}
-
+const adjacencyList = this.adjacencyList;
     (function dfs(vertex){
 if(!vertex) return null;
 visited[vertex] = true;
 list.push(vertex); 
-    })(start)
-
+adjacencyList[vertex].forEach(neighbour) => {
+    if(!visited[neighbour]){
+        return dfs(neighbour)
+    }
 }
+
+    })(start)
+return list;
+}
+
+console.log(g.DFSRecursive("A"))
