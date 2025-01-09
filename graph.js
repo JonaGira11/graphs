@@ -28,6 +28,24 @@ class Graph{
         }  
         delete this.adjacencyList[vertex]
     }
+    depthFirstRecursive(start){
+        const result = [];
+        const visited = {};
+        const adjacencyList = this.adjacencyList;
+
+        (function dfs(vertex){
+            if(!vertex) return null;
+            visited[vertex] = true;
+            result.push(vertex);
+            adjacencyList[vertex].forEach(neighbor => {
+                if(!visited[neighbor]){
+                    return dfs(neighbor)
+                }
+            });
+        })(start);
+
+        return result;
+    }
 }
 
 let g = new Graph();
@@ -53,22 +71,23 @@ g.addEdge("E","F")
    \  f   /
 */
 
-function DFSRecursive(start){
-    const list = []
+/* function DFSRecursive(start){
+    const result = []
     const visited = {}
 const adjacencyList = this.adjacencyList;
     (function dfs(vertex){
 if(!vertex) return null;
 visited[vertex] = true;
 list.push(vertex); 
-adjacencyList[vertex].forEach(neighbour) => {
+adjacencyList[vertex].forEach(neighbour => {
     if(!visited[neighbour]){
         return dfs(neighbour)
-    }
 }
+
+    })
 
     })(start)
-return list;
-}
+return result;
+} */
 
-console.log(g.DFSRecursive("A"))
+console.log(g.depthFirstRecursive("A"))
