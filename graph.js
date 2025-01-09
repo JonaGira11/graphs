@@ -44,3 +44,23 @@ g.addEdge("B","E")
 g.addEdge("D","E")
 g.addEdge("D","F")
 g.addEdge("E","F")
+
+/* 
+   a 
+   /   \
+   b    c
+   d ----  e 
+   \  f   /
+*/
+
+function DFSRecursive(start){
+    const list = []
+    const visited = {}
+
+    (function dfs(vertex){
+if(!vertex) return null;
+visited[vertex] = true;
+list.push(vertex); 
+    })(start)
+
+}
