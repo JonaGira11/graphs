@@ -65,6 +65,22 @@ class Graph{
         })
 return result; 
     }
+    breadthFirst(start){
+        const queue = []
+        const result = []
+        const visited = {}
+
+        while(queue.length){
+            currentVertex = queue.shift();
+            this.adjacencyList[currentVertex].forEach(neighbour => {
+                if(!visited[neighbour]){
+                    visited[neighbour] = true;
+                    queue.push(neighbour);
+                }
+            })
+        }
+        return result;
+    }
     
 }
 
@@ -86,7 +102,7 @@ g.addEdge("E","F")
 Sakataginsan8
 
 /* 
-   a 
+     a 
    /   \
    b    c
    d ----  e 
