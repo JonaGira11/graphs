@@ -63,8 +63,9 @@ class Graph{
                 stack.push(neighbor)
             }
         })
-
+return result; 
     }
+    
 }
 
 let g = new Graph();
