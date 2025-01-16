@@ -46,6 +46,25 @@ class Graph{
 
         return result;
     }
+    depthFirstIterative(start){
+        const stack = [start];
+        const result = [];
+        const visited = {};
+        visited[start] = true;
+
+        while(stack.length){
+            let currentVertex = stack.pop();
+            result.push(currentVertex)
+        }
+
+        this.adjacencyList[currentVertex].forEach(neighbor => {
+            if(!visited[neighbor]){
+                visited[neighbor] = true;
+                stack.push(neighbor)
+            }
+        })
+
+    }
 }
 
 let g = new Graph();
@@ -62,6 +81,8 @@ g.addEdge("B","E")
 g.addEdge("D","E")
 g.addEdge("D","F")
 g.addEdge("E","F")
+
+Sakataginsan8
 
 /* 
    a 
