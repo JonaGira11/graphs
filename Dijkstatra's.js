@@ -1,16 +1,3 @@
-class WeightedGraph {
-    constructor() {
-        this.adjencyList = {};
-    }
-    addVertex(vertex){
-        if(!this.adjencyList[vertex]) this.adjencyList[vertex] = [];
-    }
-    addEdge(vertex1,vertex2,weight){
-        this.adjencyList[vertex1].push({node:vertex2, weight});
-        this.adjencyList[vertex2].push({node:vertex1, weight});
-    }
-}
-
 class PriorityQueue {
     constructor(){
       this.values = [];
@@ -26,6 +13,40 @@ class PriorityQueue {
       this.values.sort((a, b) => a.priority - b.priority);
     };
   }
+class WeightedGraph {
+    constructor() {
+        this.adjencyList = {};
+    }
+    addVertex(vertex){
+        if(!this.adjencyList[vertex]) this.adjencyList[vertex] = [];
+    }
+    addEdge(vertex1,vertex2,weight){
+        this.adjencyList[vertex1].push({node:vertex2, weight});
+        this.adjencyList[vertex2].push({node:vertex1, weight});
+    }
+    dijkstra(start,finish){
+        const nodes = new PriorityQueue();
+        const distances = {};
+        const previous = {};
+
+        for(let vertex in this.adjencyList){
+            if(vertex === start ){
+                distances[vertex] = 0;
+                nodes.enqueue(vertex, 0);
+                
+            }else {
+                distances[vertex] = Infinity;
+                nodes.enqueue(vertex, Infinity);
+            }
+            previous[vertex] = null;
+        }
+        // as long as there is someting to visit 
+        
+
+    }
+}
+
+
 
 var graph = new WeightedGraph()
 graph.addVertex("A");
