@@ -41,7 +41,22 @@ class WeightedGraph {
             previous[vertex] = null;
         }
         // as long as there is someting to visit 
-        
+        while(nodes.values.length){
+            smallesst = nodes.dequeue().val;
+            if(smallesst === finish){
+
+            }
+            if(smallesst || distances[smallesst !== Infinity]){
+                for(let neighbour in this.adjencyList[smallesst] ){
+                    let nextNode = this.adjencyList[smallesst];
+                    let candidate = distances[smallest] + nextNode.weight;
+                    if(candidate < distances[nextNode.node]){
+                        
+                    }
+                }
+            }
+
+        }
 
     }
 }
